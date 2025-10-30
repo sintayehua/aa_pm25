@@ -140,6 +140,30 @@ class PM25Dashboard:
             self.show_predictions()
         elif app_mode == "📋 Data Explorer":
             self.show_data_explorer()
+        
+        # Footer with developer info
+        st.markdown("---")
+        st.markdown("### 👨‍💻 Developed by:")
+        col1, col2 = st.columns(2)
+
+        with col1:
+            st.markdown("**Sintayehu Adefires Abebe**")
+            st.markdown("PhD | Hydrology & Water Resources")
+
+        with col2:
+            st.markdown("**Connect with me:**")
+            st.markdown("[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/sintayehu-adefires-abebe-47622347)")
+            st.markdown("[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sintayehua)")
+
+        #with col3:
+            #st.markdown(" ")
+            #st.markdown("[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sintayehua)")
+            #st.markdown("**Portfolio**")
+            #st.markdown("[![Website](https://img.shields.io/badge/Portfolio-FF7139?style=for-the-badge&logo=Firefox-Browser&logoColor=white)](https://yourportfolio.com)")
+
+        st.markdown("<div style='text-align: center; margin-top: 20px;'>"
+                    "Made with ❤️ using Streamlit"
+                    "</div>", unsafe_allow_html=True)
     
     def show_overview(self):
         """Show overview dashboard"""
