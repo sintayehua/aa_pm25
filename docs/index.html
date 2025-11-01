@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM2.5 Air Quality Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            padding: 60px 20px;
+        }
+        
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #ff6b6b;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s, background 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            background: #ff5252;
+        }
+        
+        .features {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+            border-left: 5px solid #667eea;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .screenshots {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 30px;
+            margin: 40px 0;
+        }
+        
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .screenshot {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .screenshot:hover {
+            transform: scale(1.02);
+        }
+        
+        .footer {
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+        }
+        
+        .developer-info {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+        
+        .social-links {
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .screenshot-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌍 PM2.5 Air Quality Dashboard</h1>
+            <p>Real-time air pollution monitoring and prediction using satellite data and machine learning</p>
+            <a href="https://your-streamlit-app.streamlit.app/" class="cta-button">🚀 Live Demo</a>
+        </div>
+        
+        <div class="features">
+            <h2 style="text-align: center; margin-bottom: 40px; color: #333;">✨ Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Real-time Monitoring</h3>
+                    <p>Live PM2.5 concentration tracking with interactive visualizations</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>ML Predictions</h3>
+                    <p>Machine learning models for accurate air quality forecasting</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛰️</div>
+                    <h3>Satellite Data</h3>
+                    <p>Integration with satellite data (AAI, NO2) for comprehensive analysis</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🗺️</div>
+                    <h3>Spatial Analysis</h3>
+                    <p>Interactive maps showing pollution distribution across regions</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Seasonal Trends</h3>
+                    <p>Analysis of seasonal patterns and correlation with weather data</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔮</div>
+                    <h3>Predictive Analytics</h3>
+                    <p>Future PM2.5 level predictions based on multiple data sources</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="screenshots">
+            <h2 style="text-align: center; margin-bottom: 40px; color: #333;">📸 Application Preview</h2>
+            <div class="screenshot-grid">
+                <img src="dashboard-preview-1.png" alt="Dashboard Overview" class="screenshot">
+                <img src="dashboard-preview-2.png" alt="Time Series Analysis" class="screenshot">
+                <img src="dashboard-preview-3.png" alt="Spatial Analysis" class="screenshot">
+                <img src="dashboard-preview-4.png" alt="Predictions" class="screenshot">
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="developer-info">
+                <h3>👨‍💻 Developed by Your Name</h3>
+                <p>Data Scientist | AI Engineer | Environmental Analyst</p>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
+                    <a href="https://github.com/yourusername">GitHub</a>
+                    <a href="https://yourportfolio.com">Portfolio</a>
+                </div>
+            </div>
+            <p style="margin-top: 30px; opacity: 0.8;">
+                Made with ❤️ using Streamlit, Python, and Machine Learning
+            </p>
+        </div>
+    </div>
+</body>
+</html>
